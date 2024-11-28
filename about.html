@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Scoutbit LCC</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+
+
+      <!-- Navbar Start -->
+<div class="container-fluid sticky-top px-0">
+    <div class="container px-0">
+        <nav class="navbar navbar-expand-lg navbar-dark py-3 px-4" style="background: linear-gradient(90deg, #fafbfc, #f5f7f8);">
+            <a href="index.html" class="navbar-brand p-0">
+                <!-- Custom Logo (Icon + Text) -->
+                <div class="d-flex align-items-center">
+                    <!-- Icon -->
+                    <i class="fas fa-chart-line fa-2x me-2" style="color: #02010f;"></i>
+                    <!-- Company Name -->
+                    <span style="font-family: 'Arial', sans-serif; font-size: 1.5rem; font-weight: bold; color: #141416;">Scoutbit LLC</span>
+                </div>
+            </a>
+     
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars" style="color: white;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active " style="color: white; position: relative; transition: all 0.3s;">Home</a>
+                    <a href="about.html" class="nav-item nav-link" style="color: white; position: relative; transition: all 0.3s;">About</a>
+                    <a href="service.html" class="nav-item nav-link" style="color: white; position: relative; transition: all 0.3s;">Careers</a>
+                    <a href="project.html" class="nav-item nav-link" style="color: white; position: relative; transition: all 0.3s;">Our Value</a>
+                    <a href="contact.html" class="nav-item nav-link " style="color: white; position: relative; transition: all 0.3s;">Contact</a>
+                </div>
+               
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Inline CSS for Animations -->
+<style>
+    /* Fade In Animation */
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Apply Fade In Effect on Navbar Elements */
+    .navbar, .navbar-brand, .navbar-toggler, .navbar-nav .nav-link, .dropdown-menu, .btn {
+        animation: fadeInUp 1.5s ease-in forwards;
+    }
+
+    .navbar-toggler {
+        animation-delay: 0.3s;
+    }
+
+    .navbar-nav .nav-link {
+        animation-delay: 0.5s;
+    }
+
+    .dropdown-menu {
+        animation-delay: 0.7s;
+    }
+
+    .btn {
+        animation-delay: 0.9s;
+    }
+
+    /* Hover Effect */
+    .nav-item.nav-link:hover {
+        color: #459cc4;  /* Change to a blue shade */
+        transform: scale(1.1);  /* Slightly increase the size */
+    }
+
+    /* Adding transition effect for smoothness */
+    .nav-item.nav-link {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+</style>
+
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+     <!-- Carousel Start -->
+<section class="header-carousel owl-carousel position-relative">
+    <!-- Carousel Item -->
+    <div class="header-carousel-item position-relative">
+        <!-- Background Image -->
+        <div class="header-carousel-item-img-1 position-relative">
+            <img src="img/carousel-1.jpg" class="img-fluid w-100" alt="Welcome to Scoutbit">
+            <!-- Dark Overlay -->
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100" 
+                 style="background-color: rgba(0, 0, 0, 0.5);"></div>
+        </div>
+        <!-- Carousel Caption -->
+        <div class="carousel-caption position-absolute top-50 start-50 translate-middle text-start">
+            <div class="carousel-caption-inner p-3" style="max-width: 600px;">
+                <h1 class="display-1 text-uppercase text-white fw-bold mb-4 animate__animated animate__fadeInUp">
+                    Welcome to Scoutbit.
+                </h1>
+                <p class="fs-5 text-white mb-4 animate__animated animate__fadeInUp">
+                    Where Market Intelligence Meets Precision Execution
+                </p>
+                <a href="about.html" 
+                   class="btn btn-primary rounded-pill py-3 px-5 animate__animated animate__fadeInUp">
+                   About Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Carousel End -->
+
+<!-- Additional Styling -->
+<style>
+    /* Overlay Effect */
+    .header-carousel .overlay {
+        z-index: 1; /* Ensures overlay appears above the image */
+    }
+
+    /* Text Styling */
+    .header-carousel-item .carousel-caption {
+        z-index: 2; /* Ensures text appears above the overlay */
+    }
+
+    /* Scroll Effect for Background Darkness */
+    .header-carousel .header-carousel-item-img-1 {
+        position: relative;
+        transition: filter 0.5s ease-in-out;
+    }
+
+    /* Darken Background on Scroll */
+    .header-carousel.scrolled .header-carousel-item-img-1 {
+        filter: brightness(0.7);
+    }
+</style>
+
+<!-- JavaScript for Scroll Effect -->
+<script>
+    document.addEventListener("scroll", () => {
+        const headerCarousel = document.querySelector(".header-carousel");
+        if (window.scrollY > 50) {
+            headerCarousel.classList.add("scrolled");
+        } else {
+            headerCarousel.classList.remove("scrolled");
+        }
+    });
+</script>
+
+<!-- Inline CSS for Animations and Styling -->
+<style>
+    .header-carousel-item {
+        position: relative;
+        width: 100%;
+    }
+    
+    .header-carousel-item-img-1,
+    .header-carousel-item-img-2 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Overlay for text visibility on image */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+        z-index: 1;
+    }
+
+    /* Style for the carousel caption */
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2; /* Ensure text is above the overlay */
+        color: white;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Carousel Caption Inner Styling */
+    .carousel-caption-inner {
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    .carousel-caption h1,
+    .carousel-caption p,
+    .carousel-caption .btn {
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    .carousel-caption h1 {
+        font-size: 3rem; /* Larger text similar to the screenshot */
+        font-weight: 700;
+        animation-delay: 1s;
+    }
+
+    .carousel-caption p {
+        font-size: 1.25rem; /* Slightly smaller than heading but still prominent */
+        animation-delay: 1.2s;
+    }
+
+    .carousel-caption .btn {
+        animation-delay: 1.4s;
+        background-color: #ff7f00; /* Button color similar to the screenshot */
+        border: none;
+    }
+
+    .carousel-caption .btn:hover {
+        background-color: #e67e00; /* Darken on hover */
+    }
+
+    /* FadeInUp Animation */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Style for responsiveness */
+    @media (max-width: 768px) {
+        .carousel-caption h1 {
+            font-size: 2rem; /* Smaller font size on mobile */
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+        }
+
+        .carousel-caption .btn {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Hide Owl Carousel left and right arrows */
+    .owl-carousel .owl-nav {
+        display: none;
+    }
+</style>
+
+<!-- Add Owl Carousel JavaScript for smooth slide transitions -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+        });
+    });
+</script>
+
+
+
+<!-- About Us Section Start -->
+<section class="about-us-section py-5 bg-white">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <!-- Text Section -->
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h4 class="text-uppercase text-primary fw-bold mb-3 letter-spacing-2">
+                    About Us
+                </h4>
+                <h1 class="display-5 fw-bold text-dark mb-4">
+                    Turning Market Insights into Profit Through Precision Trading
+                </h1>
+                <p class="text-secondary fs-6 mb-4" style="text-align: justify;">
+                    Founded in September 2017, Scoutbit LLC is a capital innovation firm focused on achieving growth 
+                    through strategic, self-funded engagements in the global derivatives markets. With expertise in 
+                    advanced financial instruments—including futures, options, forwards, and swaps—we operate across 
+                    a diverse array of asset classes such as energy, metals, and commodities. Our approach combines 
+                    sophisticated quantitative models and deep market insight, allowing us to uncover unique opportunities 
+                    and drive consistent, long-term value.
+                </p>
+                <p class="text-secondary fs-6 mb-4" style="text-align: justify;">
+                    Our tailored approach, grounded in integrity and excellence, has helped us build long-lasting 
+                    partnerships that drive impactful outcomes.
+                </p>
+                <a href="about.html" class="btn btn-primary rounded-pill py-2 px-4">
+                    Read More
+                </a>
+            </div>
+            <!-- Image Section -->
+            <div class="col-lg-6 text-center wow fadeInUp" data-wow-delay="0.3s">
+                <div class="position-relative d-inline-block">
+                    <img src="img/about-2.jpg" class="img-fluid rounded shadow" alt="About Scoutbit LLC">
+                    <!-- Decorative Overlay -->
+                    <div class="position-absolute top-50 start-50 translate-middle" 
+                         style="width: 9%; height: 9%; border-radius: 50%; background-color: rgba(108, 99, 255, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section End -->
+
+
+
+
+
+
+
+
+
+
+    <!-- Career Section Start -->
+<section class="career-section py-5 bg-light">
+    <div class="container py-5">
+        <!-- Heading Section -->
+        <div class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-4 fw-bold text-dark mb-3">
+                Join Our Team at <span class="text-primary">Scoutbit LLC</span>
+            </h1>
+            <p class="text-secondary fs-5">Working At Scoutbit</p>
+        </div>
+        <!-- Content Section -->
+        <div class="row g-5 align-items-center">
+            <!-- Image Section -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <img src="img/career-highlight.jpg" class="img-fluid rounded shadow-sm" alt="Career Highlight">
+            </div>
+            <!-- Text Section -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <h4 class="text-uppercase text-primary fw-bold mb-3">Careers</h4>
+                <p class="text-secondary fs-6 mb-4">
+                    At Scoutbit LLC, our people are our greatest asset. We cultivate a culture that prioritizes 
+                    teamwork, collaboration, and professional development, offering a platform for individuals to 
+                    achieve their full potential.
+                </p>
+                <p class="text-secondary fs-6 mb-4">
+                    By joining us, you’ll have the opportunity to make an immediate impact, drive innovation, and 
+                    work on cutting-edge projects that shape the future of the global derivatives market.
+                </p>
+                <a href="service.html" class="btn btn-outline-dark rounded-pill py-2 px-4">
+                    <i class="fas fa-arrow-right"></i> Explore Careers
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Career Section End -->
+
+<!-- Values Section Start -->
+<section class="values-section py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Value Card -->
+            <div class="col-md-3 text-center">
+                <div class="card shadow-sm border-0 bg-light rounded">
+                    <img src="img/value-1.jpg" class="card-img-top rounded-top" alt="Growth Image">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary fw-bold">Growth</h4>
+                        <p class="card-text text-secondary">
+                            Thoughtful, creative, curious people come up with the best solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="card shadow-sm border-0 bg-light rounded">
+                    <img src="img/value-2.jpg" class="card-img-top rounded-top" alt="Trust Image">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary fw-bold">Trust</h4>
+                        <p class="card-text text-secondary">
+                            We believe in building strong relationships based on integrity, transparency, and mutual respect.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="card shadow-sm border-0 bg-light rounded">
+                    <img src="img/value-3.jpg" class="card-img-top rounded-top" alt="Excellence Image">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary fw-bold">Excellence</h4>
+                        <p class="card-text text-secondary">
+                            We hold ourselves to the highest standards of quality and strive to exceed expectations every day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="card shadow-sm border-0 bg-light rounded">
+                    <img src="img/value-4.jpg" class="card-img-top rounded-top" alt="Collaboration Image">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary fw-bold">Collaboration</h4>
+                        <p class="card-text text-secondary">
+                            Success is built together, with open communication and teamwork across all levels.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Values Section End -->
+
+<!-- FAQ Start -->
+<div class="container-fluid faq py-5 bg-light">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <!-- FAQ Image -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="faq-img RotateMoveRight rounded">
+                    <img src="img/faq-img.jpg" class="img-fluid rounded w-100 shadow-sm" alt="Investment FAQs" style="object-fit: cover;">
+
+                </div>
+            </div>
+
+            <!-- FAQ Content -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s" style="text-align: left;">
+                <h6 style="color: #364044; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">FAQs</h6>
+                <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px; color: #1a1a40;">Get the Answers to Your  Questions</h1>
+
+                <div class="accordion bg-white rounded p-4 shadow-sm" id="accordionExample">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item border-0 mb-4">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What is a proprietary trading firm?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body my-2">
+                                <h5>Comprehensive Investment Solutions</h5>
+                                <p style="color: #212529;">A proprietary trading firm uses its own capital to trade financial markets, seeking to generate profit through various trading strategies and market opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border-0 mb-4">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What types of assets do you trade?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body my-2">
+                                <h5>Robust Risk Management</h5>
+                                <p style="color: #212529;">We adopt meticulous risk management techniques and adhere to We trade a wide range of assets, including stocks, options, futures, forex, and other financial instruments, depending on market conditions and opportunities </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item border-0 mb-4">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                               How do you ensure your trading strategies are successful?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body my-2">
+                                <h5>Innovation and Adaptability</h5>
+                                <p style="color: #212529;">OWe use a combination of advanced algorithms, quantitative analysis, and market expertise to develop and execute strategies designed to capitalize on market opportunities..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item border-0 mb-0">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What makes your firm different from other trading firms?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body my-2">
+                                <h5>Simple Onboarding Process</h5>
+                                <p style="color: #212529;">Our firm combines innovative trading strategies, cutting-edge technology, and a team of experienced traders to maximize profitability while managing risk effectively..</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQ End -->
+
+<!-- Footer Start -->
+<div class="container-fluid footer bg-dark text-light py-4 wow fadeIn" data-wow-delay="0.2s" style="padding-bottom: 0;">
+    <div class="container py-4">
+        <div class="row g-4">
+            <!-- About Scoutbit Section -->
+<div class="col-12 col-md-6 col-lg-3">
+    <div class="footer-item text-center text-md-start">
+        <!-- Custom Logo (Icon + Text) -->
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+            <!-- Icon -->
+            <i class="fas fa-chart-line fa-2x me-3" style="color: #f8f8fa;"></i> 
+            <!-- Company Name -->
+            <span style="font-family: 'Arial', sans-serif; font-size: 1.5rem; font-weight: bold; color: #f0f0f7;">Scoutbit LLC</span>
+        </div>
+        
+        <!-- About Text -->
+        <p style="text-align: justify; line-height: 1.6; font-size: 0.9rem;">
+            We are a leading financial consultancy firm specializing in algorithmic trading 
+            and investment solutions. Our mission is to help clients navigate the financial markets 
+            with precision and integrity.
+        </p>
+    </div>
+</div>
+
+
+            <!-- Quick Links Section -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li><a href="index.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Home</a></li>
+                        <li><a href="about.html" class="text-light"><i class="fas fa-angle-right me-2"></i> About Us</a></li>
+                        <li><a href="service.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Careers</a></li>
+                        <li><a href="faqs.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Our Value</a></li>
+                        <li><a href="contact.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Useful Links Section -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <h4 class="text-white mb-3">Useful Links</h4>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li><a href="privacy-policy.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a></li>
+                        <li><a href="disclaimer.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Disclaimer</a></li>
+                        <li><a href="sitemap.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Sitemap</a></li>
+                        <li><a href="help-support.html" class="text-light"><i class="fas fa-angle-right me-2"></i> Help & Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <h4 class="text-white mb-3">Contact Info</h4>
+                    <p style="font-size: 0.9rem;">
+                        <i class="fa fa-map-marker-alt me-2"></i>
+                        Office No. BS106, Level G, Block B, Shams Business Center, Sharjah Media City Free Zone, Sharjah, UAE
+                    </p>
+                    <p style="font-size: 0.9rem;">
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="mailto:admin@Scoutbitllc.com" class="text-light">admin@Scoutbitllc.com</a>
+                    </p>
+                    <p style="font-size: 0.9rem;">
+                        <i class="fas fa-phone me-2"></i>
+                        <a href="tel:+971528831423" class="text-light">+971 52 883 1423</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="row mt-4 border-top pt-3">
+            <div class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
+                <p class="mb-0" style="font-size: 0.9rem;">&copy; 2024 Scoutbit LLC. All Rights Reserved.</p>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <p class="mb-0" style="font-size: 0.9rem;">
+                    Designed by 
+                    <a href="https://scoutbitllc.com" class="text-light fw-bold">Scoutbit LLC</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+        
+       
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>
